@@ -1,0 +1,10 @@
+[Unit]
+Description=Emercoin MCP App
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/emercoin-mcp-app
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
