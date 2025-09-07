@@ -1,10 +1,14 @@
 [Unit]
-Description=Emercoin MCP App
+Description=emercoin-mcp-app
 After=network.target
 
 [Service]
+Environment=TLS_CERT=/etc/emercoin-mcp-app/cert.pem
+Environment=TLS_KEY=/etc/emercoin-mcp-app/key.pem
 ExecStart=/usr/local/bin/emercoin-mcp-app
 Restart=always
+User=skywire
+WorkingDirectory=/var/lib/emercoin-mcp-app
 
 [Install]
 WantedBy=multi-user.target
